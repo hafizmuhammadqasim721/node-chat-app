@@ -26,11 +26,11 @@ io.on('connection', (socket) => {
 
 
 
-    socket.on('createMessage', (message) => {
+    socket.on('createMessage', (message, callback) => {
         console.log('createMessage', message);
-
-
         io.emit('newMessage', generateMessage(message.from, message.text));
+
+        callback('This acknowledgement sent from the server');
 
         // socket.broadcast.emit('newMessage', {
         //     from: message.from,
