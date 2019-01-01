@@ -13,7 +13,6 @@ function scrollToBottom() {
     var scrollTop = messages.prop('scrollTop');
     var scrollHeight = messages.prop('scrollHeight');
     var newMessageHeight = newMessage.innerHeight();
-
     var lastMessageHeight = newMessage.prev().innerHeight();
 
     if (clientHeight + newMessageHeight + lastMessageHeight >= scrollHeight) {
@@ -42,7 +41,7 @@ socket.on('newMessage', function(message) {
 
     jQuery('#messages').append(html);
 
-    scrollToBottom();
+    //scrollToBottom();
 });
 
 socket.on('newLocationMessage', function(message) {
@@ -58,7 +57,7 @@ socket.on('newLocationMessage', function(message) {
 
     jQuery('#messages').append(html);
 
-    scrollToBottom();
+    //scrollToBottom();
 
 });
 
